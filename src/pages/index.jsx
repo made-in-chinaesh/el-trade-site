@@ -9,6 +9,7 @@ const Routing = () => {
 			<Routes>
 				<Route path='/' element={<MainPage />} />
 			</Routes>
+			{/* <div className='snowblock'></div> */}
 		</>
 	)
 }
