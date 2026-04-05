@@ -1,0 +1,44 @@
+header {
+	display: flex;
+	align-items: center;
+	padding: 12px 0;
+
+	.container {
+		display: flex;
+		align-items: center;
+		gap: 100px;
+	}
+
+	.title {
+		color: #fff;
+		text-transform: uppercase;
+		text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+		animation: shadow-dance 2s infinite;
+		user-select: none;
+
+		@keyframes shadow-dance {
+			0%,
+			100% {
+				text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+			}
+			50% {
+				text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+			}
+		}
+	}
+
+	nav {
+		ul {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+
+			li {
+				a {
+					color: #fff;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
