@@ -5,7 +5,7 @@ import styles from './styles.module.scss'
 export const ChooseBlock = () => {
 	return (
 		<div className={styles.chooseBlock}>
-			<div className={styles.container} data-aos='fade-up'>
+			<div className={clsx(styles.container, 'container')} data-aos='fade-up'>
 				<div className={styles.mainInfo}>
 					<TypeAnimation
 						sequence={['Выберите свой путь', 1000]}
