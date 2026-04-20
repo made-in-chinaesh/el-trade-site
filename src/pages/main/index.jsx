@@ -1,6 +1,7 @@
 import {
 	AdvantagesBlock,
 	ChooseBlock,
+	CommandBlock,
 	UniqueBlock,
 	Wave,
 } from '../../components/main'
@@ -12,6 +13,7 @@ const MainPage = () => {
 			<UniqueBlock />
 			<ChooseBlock />
 			<AdvantagesBlock />
+			<CommandBlock />
 		</div>
 	)
 }
