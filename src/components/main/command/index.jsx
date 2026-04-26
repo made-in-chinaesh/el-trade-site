@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import { WitcherCard } from '../../../shared/components'
 
 import styles from './styles.module.scss'
 
@@ -14,29 +13,29 @@ export const CommandBlock = () => {
 				</p>
 			</div>
 			<div className={styles.cards}>
-				<WitcherCard className={styles.card}>
+				<div className={styles.card}>
 					<img
 						src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxys3YcMIKBtHrEwQ3JdVz-YiNNSDlXhYRVw&s'
 						alt=''
 					/>
 					<span>Азимов Билол</span>
-				</WitcherCard>
+				</div>
 
-				<WitcherCard className={styles.card}>
+				<div className={styles.card}>
 					<img
 						src='https://i1.sndcdn.com/avatars-wtBAX6qgXtY0yPad-R1QPuA-t1080x1080.jpg'
 						alt=''
 					/>
 					<span>Азимов Билол</span>
-				</WitcherCard>
+				</div>
 
-				<WitcherCard className={styles.card}>
+				<div className={styles.card}>
 					<img
 						src='https://pyxis.nymag.com/v1/imgs/059/056/4fe6fb3a2aa9222855627e5ef384156369-6-22-Epstein.1x.rsquare.w1400.jpg'
 						alt=''
 					/>
 					<span>Азимов Билол</span>
-				</WitcherCard>
+				</div>
 			</div>
 		</div>
 	)

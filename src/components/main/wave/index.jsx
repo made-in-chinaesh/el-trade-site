@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export const Wave = () => {
 	return (
-		<section>
+		<section className={styles.section}>
 			<div className={styles.wave}>
 				<span></span>
 				<span></span>

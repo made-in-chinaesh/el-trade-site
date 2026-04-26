@@ -1,4 +1,4 @@
-section {
+.section {
 	position: relative;
 	width: 100%;
 	height: 100vh;
@@ -9,7 +9,7 @@ section {
 	background: #ffc849; /* основной фон */
 }
 
-section .wave {
+.section .wave {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -17,7 +17,7 @@ section .wave {
 	transition: 0.5s;
 }
 
-section .wave span {
+.section .wave span {
 	content: '';
 	position: absolute;
 	width: 325vh;
@@ -29,19 +29,19 @@ section .wave span {
 	opacity: 0.7;       /* чуть прозрачный для наложения */
 }
 
-section .wave span:nth-child(1) {
+.section .wave span:nth-child(1) {
 	border-radius: 45%;
 	animation: animate 5s linear infinite;
 	opacity: 1; /* первый слой более яркий */
 }
 
-section .wave span:nth-child(2) {
+.section .wave span:nth-child(2) {
 	border-radius: 40%;
 	animation: animate 10s linear infinite;
 	opacity: 0.5;
 }
 
-section .wave span:nth-child(3) {
+.section .wave span:nth-child(3) {
 	border-radius: 42.5%;
 	animation: animate 15s linear infinite;
 	opacity: 0.4;

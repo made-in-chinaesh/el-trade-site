@@ -1,7 +1,10 @@
 import {
 	AdvantagesBlock,
+	AppointmentBlock,
 	ChooseBlock,
 	CommandBlock,
+	GlobalBlock,
+	ReviewsBlock,
 	UniqueBlock,
 	Wave,
 } from '../../components/main'
@@ -14,6 +17,9 @@ const MainPage = () => {
 			<ChooseBlock />
 			<AdvantagesBlock />
 			<CommandBlock />
+			<GlobalBlock />
+			<ReviewsBlock />
+			<AppointmentBlock />
 		</div>
 	)
 }
