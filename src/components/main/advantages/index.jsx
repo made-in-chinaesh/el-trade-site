@@ -6,7 +6,7 @@ import styles from './styles.module.scss'
 
 export const AdvantagesBlock = () => {
 	return (
-		<section className={styles.advantages}>
+		<section className={styles.advantages} id='about'>
 			<div className='container'>
 				<div className={styles.firstBlock}>
 					<h2>Преимущества нашей академии</h2>

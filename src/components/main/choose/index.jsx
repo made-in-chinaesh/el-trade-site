@@ -1,10 +1,13 @@
 import clsx from 'clsx'
+import { useNavigate } from 'react-router-dom'
 import { TypeAnimation } from 'react-type-animation'
 import styles from './styles.module.scss'
 
 export const ChooseBlock = () => {
+	const navigate = useNavigate()
+
 	return (
-		<div className={styles.chooseBlock}>
+		<div className={styles.chooseBlock} id='courses'>
 			<div className={clsx(styles.container, 'container')} data-aos='fade-up'>
 				<div className={styles.mainInfo}>
 					<TypeAnimation
@@ -15,13 +18,15 @@ export const ChooseBlock = () => {
 						className={clsx(styles.title, 'gradientText')}
 					/>
 
-					<span>
-						Выберите подходящий формат обучения: оффлайн курсы или гибкие
-						онлайн-программы для получения знаний и практических навыков.
-					</span>
+					<span>Выберите формат обучения и начните путь в трейдинге.</span>
 				</div>
 
-				<div className={styles.outer}>
+				{/* OFFLINE */}
+				<div
+					className={styles.outer}
+					data-aos='fade-left'
+					onClick={() => navigate('/offline-course')}
+				>
 					<div className={styles.dot} />
 					<div className={styles.card}>
 						<div className={styles.ray} />
@@ -31,14 +36,19 @@ export const ChooseBlock = () => {
 							</div>
 
 							<p>
-								Длительность — 3 месяца, из них 2 месяца теории и 1 месяц
-								практики. Идеально подходят для глубокого погружения в тему.
+								3 месяца интенсивного обучения: теория, практика и работа с
+								реальными кейсами рынка.
 							</p>
 						</div>
 					</div>
 				</div>
 
-				<div className={styles.outer}>
+				{/* ONLINE */}
+				<div
+					className={styles.outer}
+					data-aos='fade-right'
+					onClick={() => navigate('/online-course')}
+				>
 					<div className={styles.dot} />
 					<div className={styles.card}>
 						<div className={styles.ray} />
@@ -47,14 +57,12 @@ export const ChooseBlock = () => {
 								Онлайн-курсы
 							</div>
 							<p>
-								Длительность — примерно 1,5 месяца. Удобный формат для тех, кто
-								ценит своё время и предпочитает обучение онлайн.
+								Гибкий формат обучения из любой точки мира с поддержкой
+								наставников.
 							</p>
 						</div>
 					</div>
 				</div>
-
-				<div className={styles.card2}></div>
 			</div>
 		</div>
 	)

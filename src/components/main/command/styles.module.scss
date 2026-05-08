@@ -10,11 +10,18 @@
 	text-align: center;
 
 	h2 {
-		font-size: 56px;
-		font-weight: 700;
-		color: #fff;
-		margin-bottom: 24px;
-		line-height: 1.1;
+		font-size: 72px;
+		font-weight: 900;
+		line-height: 1.05;
+		margin-bottom: 26px;
+
+		background: linear-gradient(90deg, #fff 0%, #00ffae 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@media (max-width: 768px) {
+			font-size: 44px;
+		}
 	}
 
 	p {
