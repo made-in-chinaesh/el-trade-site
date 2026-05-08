@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 
 export const AdvantagesBlock = () => {
 	return (
-		<Space className={styles.advantages}>
+		<section className={styles.advantages}>
 			<div className='container'>
 				<div className={styles.firstBlock}>
 					<h2>Преимущества нашей академии</h2>
@@ -45,6 +45,6 @@ export const AdvantagesBlock = () => {
 					</div>
 				</div>
 			</div>
-		</Space>
+		</section>
 	)
 }

@@ -1,4 +1,5 @@
-import { CiStar } from 'react-icons/ci'
+import { CiStar, CiUser } from 'react-icons/ci'
+import { MdOutlineTravelExplore } from "react-icons/md";
 
 import clsx from 'clsx'
 import styles from './styles.module.scss'
@@ -29,7 +30,7 @@ export const GlobalBlock = () => {
 
 					<div>
 						<section>
-							<CiStar />
+							<MdOutlineTravelExplore />
 						</section>
 						<div>
 							<h4>Международный опыт</h4>
@@ -42,7 +43,7 @@ export const GlobalBlock = () => {
 
 					<div>
 						<section>
-							<CiStar />
+							<CiUser />
 						</section>
 						<div>
 							<h4>Работа на новостях</h4>

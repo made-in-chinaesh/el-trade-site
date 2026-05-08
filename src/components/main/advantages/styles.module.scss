@@ -1,60 +1,206 @@
 .advantages {
-	color: #fff;
-	padding: 100px 0;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	padding: 140px 0;
+	background: #050816;
+	overflow: hidden;
 
-	.firstBlock {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 20px;
-		text-align: center;
-		margin-bottom: 60px;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
 
-		h2 {
-			font-size: 40px;
-		}
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0.03) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.03) 1px,
+				transparent 1px
+			);
 
-		span {
-			font-size: 28px;
-			max-width: 700px;
+		background-size: 45px 45px;
+
+		mask-image: linear-gradient(
+			to bottom,
+			transparent,
+			black,
+			transparent
+		);
+	}
+}
+
+.firstBlock {
+	position: relative;
+	z-index: 2;
+
+	max-width: 850px;
+	margin: 0 auto 90px auto;
+
+	text-align: center;
+
+	h2 {
+		font-size: 64px;
+		font-weight: 800;
+		line-height: 1.1;
+
+		margin-bottom: 24px;
+
+		background: linear-gradient(90deg, #fff 0%, #00ffae 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+
+		@media (max-width: 768px) {
+			font-size: 44px;
 		}
 	}
 
-	.secondBlock {
-		display: flex;
-		justify-content: space-around;
-		gap: 10px;
+	span {
+		font-size: 18px;
+		line-height: 190%;
+		color: rgba(255, 255, 255, 0.68);
+	}
+}
 
-		div {
-			padding: 40px 20px;
-			border: 1px solid rgba(62, 62, 62, 0.599);
-			border-radius: 6px;
-			text-align: center;
+.secondBlock {
+	position: relative;
+	z-index: 2;
 
-			&:hover {
-				background: #ffffff80;
-				color: #000;
-				outline: 1px solid rgb(255, 255, 255);
-				box-shadow: inset 0 0 80px whitesmoke,
-					inset 20px 0 80px rgba(255, 0, 255, 0.747), inset -20px 0 80px #0ff,
-					inset 20px 0 300px #f0f, inset -20px 0 300px #0ff, 0 0 50px #fff,
-					-10px 0 80px #f0f, 10px 0 80px #0ff;
-				transition: all ease-in-out 0.3s;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
+
+	@media (max-width: 992px) {
+		grid-template-columns: 1fr;
+	}
+
+	> div {
+		position: relative;
+
+		padding: 42px 36px;
+
+		border-radius: 34px;
+
+		background: linear-gradient(
+			180deg,
+			rgba(18, 21, 34, 0.96) 0%,
+			rgba(9, 11, 19, 0.98) 100%
+		);
+
+		border: 1px solid rgba(255, 255, 255, 0.06);
+
+		overflow: hidden;
+
+		transition: 0.45s;
+
+		box-shadow:
+			0 0 40px rgba(0, 255, 170, 0.03),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+		&::before {
+			content: '';
+
+			position: absolute;
+			top: -90px;
+			right: -90px;
+
+			width: 220px;
+			height: 220px;
+
+			background: #00ffae;
+
+			filter: blur(110px);
+
+			opacity: 0.12;
+		}
+
+		&::after {
+			content: '';
+
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			width: 100%;
+			height: 120px;
+
+			background: linear-gradient(
+				to top,
+				rgba(0, 255, 170, 0.14),
+				transparent
+			);
+
+			clip-path: polygon(
+				0% 100%,
+				0% 74%,
+				10% 68%,
+				22% 56%,
+				36% 61%,
+				49% 35%,
+				62% 46%,
+				75% 18%,
+				88% 30%,
+				100% 0%,
+				100% 100%
+			);
+
+			opacity: 0.45;
+
+			transition: 0.45s;
+		}
+
+		&:hover {
+			transform: translateY(-12px);
+
+			border-color: rgba(0, 255, 170, 0.24);
+
+			box-shadow:
+				0 0 70px rgba(0, 255, 170, 0.08),
+				0 0 140px rgba(0, 255, 170, 0.04);
+
+			&::after {
+				opacity: 0.8;
 			}
 
 			svg {
-				width: 60px;
-				height: 60px;
-				margin-bottom: 20px;
+				transform: scale(1.08) rotate(-4deg);
 			}
+		}
 
-			h3 {
-				font-size: 26px;
-				margin-bottom: 20px;
-			}
+		svg {
+			position: relative;
+			z-index: 2;
+
+			font-size: 64px;
+
+			color: #00ffae;
+
+			margin-bottom: 28px;
+
+			transition: 0.4s;
+		}
+
+		h3 {
+			position: relative;
+			z-index: 2;
+
+			font-size: 30px;
+			font-weight: 700;
+			line-height: 1.3;
+
+			color: white;
+
+			margin-bottom: 20px;
+		}
+
+		p {
+			position: relative;
+			z-index: 2;
+
+			font-size: 17px;
+			line-height: 190%;
+
+			color: rgba(255, 255, 255, 0.68);
 		}
 	}
 }

@@ -1,69 +1,211 @@
 .globalBlock {
-	background: #ffc849;
-	padding: 100px 0;
+	position: relative;
+	padding: 140px 0;
+	background: radial-gradient(
+			circle at top right,
+			rgba(0, 255, 170, 0.08),
+			transparent 30%
+		),
+		#050816;
 
-	.container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		gap: 60px;
-		&FirstBlock {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-			gap: 20px;
+	overflow: hidden;
 
-			h2 {
-				font-size: 40px;
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+
+		background-image: linear-gradient(
+				rgba(255, 255, 255, 0.03) 1px,
+				transparent 1px
+			),
+			linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.03) 1px,
+				transparent 1px
+			);
+
+		background-size: 45px 45px;
+
+		mask-image: linear-gradient(
+			to bottom,
+			transparent,
+			black,
+			transparent
+		);
+	}
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+}
+
+.containerFirstBlock {
+	text-align: center;
+	max-width: 850px;
+	margin: 0 auto 80px auto;
+
+	h2 {
+		font-size: 58px;
+		font-weight: 800;
+		line-height: 1.1;
+		color: white;
+		margin-bottom: 24px;
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 180%;
+		color: rgba(255, 255, 255, 0.65);
+	}
+}
+
+.containerSecondBlock {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
+
+	@media (max-width: 992px) {
+		grid-template-columns: 1fr;
+	}
+
+	> div {
+		position: relative;
+
+		padding: 35px;
+		border-radius: 30px;
+
+		background: linear-gradient(
+			180deg,
+			rgba(18, 21, 34, 0.95) 0%,
+			rgba(9, 11, 19, 0.98) 100%
+		);
+
+		border: 1px solid rgba(255, 255, 255, 0.06);
+
+		backdrop-filter: blur(14px);
+
+		overflow: hidden;
+
+		transition: 0.45s;
+
+		box-shadow:
+			0 0 30px rgba(0, 255, 170, 0.03),
+			inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: -80px;
+			right: -80px;
+
+			width: 180px;
+			height: 180px;
+
+			background: #00ffae;
+			filter: blur(100px);
+
+			opacity: 0.12;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 110px;
+
+			background: linear-gradient(
+				to top,
+				rgba(0, 255, 170, 0.12),
+				transparent
+			);
+
+			clip-path: polygon(
+				0% 100%,
+				0% 74%,
+				13% 68%,
+				24% 56%,
+				37% 61%,
+				49% 37%,
+				62% 46%,
+				74% 18%,
+				87% 31%,
+				100% 0%,
+				100% 100%
+			);
+
+			opacity: 0.45;
+			transition: 0.45s;
+		}
+
+		&:hover {
+			transform: translateY(-12px);
+
+			border-color: rgba(0, 255, 170, 0.25);
+
+			box-shadow:
+				0 0 60px rgba(0, 255, 170, 0.08),
+				0 0 120px rgba(0, 255, 170, 0.04);
+
+			section {
+				transform: scale(1.08) rotate(-4deg);
+
+				background: #00ffae;
+				color: #000;
 			}
 
-			p {
-				font-size: 28px;
-				max-width: 700px;
+			&::after {
+				opacity: 0.8;
 			}
 		}
 
-		&SecondBlock {
+		section {
+			position: relative;
+			z-index: 2;
+
+			width: 74px;
+			height: 74px;
+
 			display: flex;
-			flex-direction: column;
-			gap: 60px;
-			> div {
-				display: flex;
-				gap: 40px;
-				max-width: 800px;
+			align-items: center;
+			justify-content: center;
 
-				section {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 60px;
-					height: 60px;
-					border-radius: 50%;
-					background-color: #fff;
-					flex-shrink: 0;
-					svg {
-						width: 40px;
-						height: 40px;
-					}
-				}
+			border-radius: 22px;
 
-				div {
-					display: flex;
-					flex-direction: column;
-					gap: 10px;
-					h4 {
-						font-size: 22px;
-						font-weight: 500;
-					}
+			background: rgba(255, 255, 255, 0.05);
 
-					span {
-						font-size: 18px;
-						
-					}
-				}
+			border: 1px solid rgba(255, 255, 255, 0.08);
+
+			margin-bottom: 30px;
+
+			transition: 0.4s;
+
+			svg {
+				font-size: 34px;
+				color: white;
 			}
+		}
+
+		div {
+			position: relative;
+			z-index: 2;
+		}
+
+		h4 {
+			font-size: 28px;
+			font-weight: 700;
+			color: white;
+			margin-bottom: 18px;
+			line-height: 1.3;
+		}
+
+		span {
+			font-size: 16px;
+			line-height: 180%;
+			color: rgba(255, 255, 255, 0.65);
 		}
 	}
 }

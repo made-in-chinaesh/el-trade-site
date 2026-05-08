@@ -12,17 +12,17 @@ header {
 	.title {
 		color: #fff;
 		text-transform: uppercase;
-		text-shadow: 5px 5px 0 #ffc849, 10px 10px 0 #ffc84978;
+		text-shadow: 5px 5px 0 #00ffae, 10px 10px 0 #02865c;
 		animation: shadow-dance 2s infinite;
 		user-select: none;
 
 		@keyframes shadow-dance {
 			0%,
 			100% {
-				text-shadow: 5px 5px 0 #ffc849, 10px 10px 0 #ffc84978;
+				text-shadow: 5px 5px 0 #00ffae, 10px 10px 0 #02865c;
 			}
 			50% {
-				text-shadow: -5px -5px 0 #ffc849, -10px -10px 0 #ffc84978;
+				text-shadow: -5px -5px 0 #00ffae, -10px -10px 0 #02865c;
 			}
 		}
 	}
