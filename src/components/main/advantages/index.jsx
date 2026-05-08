@@ -1,7 +1,6 @@
 import { CiStar } from 'react-icons/ci'
 import { GrMoney } from 'react-icons/gr'
 import { RiHomeOfficeLine } from 'react-icons/ri'
-import { Space } from '../../../shared/components'
 
 import styles from './styles.module.scss'
 
