@@ -65,7 +65,7 @@ export const TeamProfile = () => {
 		<div className={styles.page}>
 			<div className='container'>
 				<div className={styles.header}>
-					<img src={member.image} />
+					<img src={member.image} alt='' />
 					<div>
 						<h1>{member.name}</h1>
 						<span>{member.role}</span>

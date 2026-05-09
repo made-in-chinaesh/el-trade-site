@@ -16,6 +16,7 @@ export const AppointmentBlock = () => {
 		}
 	
 		console.log('FORM DATA:', formattedData)
+		reset()
 	
 		// try {
 		// 	const res = await fetch('https://el-trade-server.onrender.com/submit', {

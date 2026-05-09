@@ -34,7 +34,7 @@ export const Footer = () => {
 						<FaTelegramPlane /> Telegram
 					</a>
 
-					<a href='#'>
+					<a href='https://whatsapp.com' target='_blank' rel='noreferrer'>
 						<FaWhatsapp /> WhatsApp
 					</a>
 
