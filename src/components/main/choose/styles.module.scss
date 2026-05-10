@@ -13,11 +13,7 @@
 				rgba(255, 255, 255, 0.03) 1px,
 				transparent 1px
 			),
-			linear-gradient(
-				90deg,
-				rgba(255, 255, 255, 0.03) 1px,
-				transparent 1px
-			);
+			linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 
 		background-size: 45px 45px;
 
@@ -51,6 +47,7 @@
 
 		span {
 			font-size: 18px;
+
 			line-height: 180%;
 			color: rgba(255, 255, 255, 0.65);
 		}
@@ -75,12 +72,7 @@
 		width: 2px;
 		transform: translateX(-50%);
 
-		background: linear-gradient(
-			to bottom,
-			transparent,
-			#ffc849,
-			transparent
-		);
+		background: linear-gradient(to bottom, transparent, #ffc849, transparent);
 
 		opacity: 0.25;
 	}
@@ -102,8 +94,7 @@
 
 		transition: 0.45s;
 
-		box-shadow:
-			0 0 40px rgba(255, 200, 73, 0.06),
+		box-shadow: 0 0 40px rgba(255, 200, 73, 0.06),
 			inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 
 		&:hover {
@@ -111,8 +102,7 @@
 
 			border-color: rgba(255, 200, 73, 0.25);
 
-			box-shadow:
-				0 0 80px rgba(255, 200, 73, 0.12),
+			box-shadow: 0 0 80px rgba(255, 200, 73, 0.12),
 				0 0 140px rgba(255, 200, 73, 0.06);
 
 			.ray {

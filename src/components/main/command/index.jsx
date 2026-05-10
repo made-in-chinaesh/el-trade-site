@@ -31,6 +31,7 @@ export const CommandBlock = () => {
 						<a
 							target='_blank'
 							href='https://instagram.com'
+							rel='noreferrer'
 							onClick={e => e.stopPropagation()}
 						>
 							<FaInstagram /> Instagram
@@ -50,6 +51,7 @@ export const CommandBlock = () => {
 						<a
 							target='_blank'
 							href='https://instagram.com'
+							rel='noreferrer'
 							onClick={e => e.stopPropagation()}
 						>
 							<FaInstagram /> Instagram
@@ -69,6 +71,7 @@ export const CommandBlock = () => {
 						<a
 							target='_blank'
 							href='https://instagram.com'
+							rel='noreferrer'
 							onClick={e => e.stopPropagation()}
 						>
 							<FaInstagram /> Instagram

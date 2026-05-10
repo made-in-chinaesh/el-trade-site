@@ -2,7 +2,6 @@
 	background: #050816;
 	color: white;
 
-
 	.hero {
 		padding: 140px 0 80px;
 		text-align: center;
@@ -32,29 +31,29 @@
 			top: 30px;
 			left: 50%;
 			transform: translateX(-700px);
-	
+
 			padding: 10px 16px;
-	
+
 			border-radius: 12px;
-	
+
 			border: 1px solid rgba(255, 200, 73, 0.25);
 			background: rgba(255, 200, 73, 0.08);
-	
+
 			color: #ffc849;
 			font-weight: 600;
-	
+
 			cursor: pointer;
-	
+
 			transition: 0.3s;
-	
+
 			backdrop-filter: blur(10px);
-	
+
 			&:hover {
 				background: #ffc849;
 				color: #000;
-	
+
 				transform: translateX(-700px) translateY(-2px);
-	
+
 				box-shadow: 0 0 30px rgba(255, 200, 73, 0.25);
 			}
 		}
