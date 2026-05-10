@@ -16,28 +16,28 @@ export const AppointmentBlock = () => {
 		}
 	
 		console.log('FORM DATA:', formattedData)
-		reset()
+		// reset()
 	
-		// try {
-		// 	const res = await fetch('https://el-trade-server.onrender.com/submit', {
-		// 		method: 'POST',
-		// 		headers: {
-		// 			'Content-Type': 'application/json',
-		// 		},
-		// 		body: JSON.stringify(formattedData),
-		// 	})
+		try {
+			const res = await fetch('http://localhost:5000/submit', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formattedData),
+			})
 	
-		// 	const result = await res.json()
-		// 	console.log('SERVER RESPONSE:', result)
+			const result = await res.json()
+			console.log('SERVER RESPONSE:', result)
 	
-		// 	if (!res.ok) {
-		// 		throw new Error(result.error || 'Server error')
-		// 	}
+			if (!res.ok) {
+				throw new Error(result.error || 'Server error')
+			}
 	
-		// 	reset()
-		// } catch (err) {
-		// 	console.error('REQUEST ERROR:', err)
-		// }
+			reset()
+		} catch (err) {
+			console.error('REQUEST ERROR:', err)
+		}
 	}
 
 	return (

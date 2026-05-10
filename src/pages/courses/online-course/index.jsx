@@ -1,18 +1,25 @@
+import clsx from 'clsx'
+import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const OnlineCoursePage = () => {
+	const navigate = useNavigate()
+
 	return (
-		<div className={styles.page}>
+		<div className={clsx(styles.page, 'container')}>
 			{/* HERO */}
 			<section className={styles.hero}>
-				<div className='container'>
-					<h1>Онлайн курс по трейдингу</h1>
+				{/* BACK BUTTON */}
+				<button className={styles.backBtn} onClick={() => navigate('/')}>
+					← На главную
+				</button>
 
-					<p>
-						Обучайся из любой точки мира в удобном темпе с поддержкой
-						наставников и доступом к закрытым стратегиям.
-					</p>
-				</div>
+				<h1>Онлайн курс по трейдингу</h1>
+
+				<p>
+					Обучайся из любой точки мира в удобном темпе с поддержкой наставников
+					и доступом к закрытым стратегиям.
+				</p>
 			</section>
 
 			{/* IMAGE */}
@@ -25,56 +32,50 @@ export const OnlineCoursePage = () => {
 
 			{/* FEATURES */}
 			<section className={styles.info}>
-				<div className='container'>
-					<h2>Почему онлайн формат работает</h2>
+				<h2>Почему онлайн формат работает</h2>
 
-					<ul>
-						<li>🌍 Обучение из любой страны</li>
-						<li>⏱ Гибкий график без привязки ко времени</li>
-						<li>📊 Доступ к видеоурокам 24/7</li>
-						<li>💬 Чат с наставниками и учениками</li>
-						<li>📈 Разбор реальных рыночных ситуаций</li>
-					</ul>
-				</div>
+				<ul>
+					<li>🌍 Обучение из любой страны</li>
+					<li>⏱ Гибкий график без привязки ко времени</li>
+					<li>📊 Доступ к видеоурокам 24/7</li>
+					<li>💬 Чат с наставниками и учениками</li>
+					<li>📈 Разбор реальных рыночных ситуаций</li>
+				</ul>
 			</section>
 
 			{/* MODULES */}
 			<section className={styles.modules}>
-				<div className='container'>
-					<h2>Программа курса</h2>
+				<h2>Программа курса</h2>
 
-					<div className={styles.grid}>
-						<div className={styles.card}>
-							<h3>Модуль 1</h3>
-							<p>Основы рынка и терминология трейдинга</p>
-						</div>
+				<div className={styles.grid}>
+					<div className={styles.card}>
+						<h3>Модуль 1</h3>
+						<p>Основы рынка и терминология трейдинга</p>
+					</div>
 
-						<div className={styles.card}>
-							<h3>Модуль 2</h3>
-							<p>Графики, свечи и технический анализ</p>
-						</div>
+					<div className={styles.card}>
+						<h3>Модуль 2</h3>
+						<p>Графики, свечи и технический анализ</p>
+					</div>
 
-						<div className={styles.card}>
-							<h3>Модуль 3</h3>
-							<p>Стратегии входа и выхода из сделок</p>
-						</div>
+					<div className={styles.card}>
+						<h3>Модуль 3</h3>
+						<p>Стратегии входа и выхода из сделок</p>
+					</div>
 
-						<div className={styles.card}>
-							<h3>Модуль 4</h3>
-							<p>Практика и работа с реальным рынком</p>
-						</div>
+					<div className={styles.card}>
+						<h3>Модуль 4</h3>
+						<p>Практика и работа с реальным рынком</p>
 					</div>
 				</div>
 			</section>
 
 			{/* CTA */}
 			<section className={styles.cta}>
-				<div className='container'>
-					<h2>Начни обучение онлайн</h2>
-					<p>Доступ к курсу откроется сразу после записи</p>
+				<h2>Начни обучение онлайн</h2>
+				<p>Доступ к курсу откроется сразу после записи</p>
 
-					<button>Записаться</button>
-				</div>
+				<button>Записаться</button>
 			</section>
 		</div>
 	)

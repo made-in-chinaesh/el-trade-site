@@ -31,15 +31,45 @@
 	padding: 26px;
 	border-radius: 26px;
 
-	background: rgba(255, 255, 255, 0.04);
+	background: linear-gradient(
+		180deg,
+		rgba(18, 21, 34, 0.96),
+		rgba(9, 11, 19, 0.98)
+	);
+
 	border: 1px solid rgba(255, 255, 255, 0.06);
 
-	transition: 0.3s;
+	transition: 0.35s;
+
+	position: relative;
+	overflow: hidden;
+
+	box-shadow:
+		0 0 40px rgba(255, 200, 73, 0.05),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -80px;
+		right: -80px;
+
+		width: 180px;
+		height: 180px;
+
+		background: #ffc849;
+		opacity: 0.12;
+		filter: blur(90px);
+	}
 
 	&:hover {
 		transform: translateY(-6px);
-		border-color: rgba(0, 255, 170, 0.25);
-		box-shadow: 0 0 40px rgba(0, 255, 170, 0.08);
+
+		border-color: rgba(255, 200, 73, 0.25);
+
+		box-shadow:
+			0 0 60px rgba(255, 200, 73, 0.08),
+			0 0 120px rgba(255, 200, 73, 0.04);
 	}
 }
 
@@ -51,26 +81,38 @@
 	margin-bottom: 14px;
 }
 
-/* круглая аватарка */
+/* AVATAR */
 .header img {
-	width: 52px;
-	height: 52px;
+	width: 54px;
+	height: 54px;
 
 	border-radius: 50%;
 	object-fit: cover;
 
-	border: 2px solid rgba(0, 255, 170, 0.4);
-	box-shadow: 0 0 20px rgba(0, 255, 170, 0.15);
+	border: 2px solid rgba(255, 200, 73, 0.5);
+	box-shadow: 0 0 20px rgba(255, 200, 73, 0.15);
+
+	transition: 0.3s;
+
+	&:hover {
+		transform: scale(1.08);
+	}
 }
 
-/* name badge */
+/* NAME */
 .name {
-	color: #00ffae;
+	color: #ffc849;
 	font-weight: 600;
 	font-size: 15px;
+
+	background: rgba(255, 200, 73, 0.08);
+	border: 1px solid rgba(255, 200, 73, 0.2);
+
+	padding: 6px 12px;
+	border-radius: 999px;
 }
 
-/* text */
+/* TEXT */
 .content {
 	color: rgba(255, 255, 255, 0.75);
 	font-size: 16px;

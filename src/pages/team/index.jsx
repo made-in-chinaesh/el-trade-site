@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom'
+import clsx from 'clsx'
+import { useNavigate, useParams } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 const teamData = {
@@ -57,24 +58,29 @@ const teamData = {
 
 export const TeamProfile = () => {
 	const { id } = useParams()
+	const navigate = useNavigate()
+
 	const member = teamData[id]
 
 	if (!member) return <div>Not found</div>
 
 	return (
-		<div className={styles.page}>
-			<div className='container'>
-				<div className={styles.header}>
-					<img src={member.image} alt='' />
-					<div>
-						<h1>{member.name}</h1>
-						<span>{member.role}</span>
-					</div>
-				</div>
+		<div className={clsx(styles.page, 'container')}>
+			{/* BACK BUTTON */}
+			<button className={styles.backBtn} onClick={() => navigate('/')}>
+				← Назад
+			</button>
 
-				<div className={styles.content}>
-					<p>{member.description}</p>
+			<div className={styles.header}>
+				<img src={member.image} alt='' />
+				<div>
+					<h1>{member.name}</h1>
+					<span>{member.role}</span>
 				</div>
+			</div>
+
+			<div className={styles.content}>
+				<p>{member.description}</p>
 			</div>
 		</div>
 	)
