@@ -75,7 +75,7 @@ export const OnlineCoursePage = () => {
 				<h2>Начни обучение онлайн</h2>
 				<p>Доступ к курсу откроется сразу после записи</p>
 
-				<button>Записаться</button>
+				<button onClick={() => navigate('/#appointment')}>Записаться</button>
 			</section>
 		</div>
 	)

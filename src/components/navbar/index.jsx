@@ -1,27 +1,16 @@
-import styles from './styles.module.scss'
 import { useNavigate } from 'react-router-dom'
+import styles from './styles.module.scss'
 
 export const Navbar = () => {
 	const navigate = useNavigate()
 
-	const scrollTo = id => {
-		const el = document.getElementById(id)
-
-		if (!el) return
-
-		const offset = 80
-		const top = el.getBoundingClientRect().top + window.scrollY - offset
-
-		window.scrollTo({
-			top,
-			behavior: 'smooth',
-		})
+	const goToSection = id => {
+		navigate('/', { state: { scrollTo: id } })
 	}
 
 	return (
 		<header className={styles.header}>
 			<div className={`${styles.container} container`}>
-				
 				<h1
 					className={styles.title}
 					onClick={() => navigate('/')}
@@ -32,20 +21,19 @@ export const Navbar = () => {
 
 				<nav className={styles.nav}>
 					<ul>
-						<li onClick={() => scrollTo('courses')}>Курсы</li>
-						<li onClick={() => scrollTo('team')}>Команда</li>
-						<li onClick={() => scrollTo('about')}>О нас</li>
-						<li onClick={() => scrollTo('contacts')}>Контакты</li>
+						<li onClick={() => goToSection('courses')}>Курсы</li>
+						<li onClick={() => goToSection('team')}>Команда</li>
+						<li onClick={() => goToSection('contacts')}>Контакты</li>
+						<li onClick={() => goToSection('about')}>О нас</li>
 					</ul>
 				</nav>
 
 				<button
 					className={styles.cta}
-					onClick={() => scrollTo('appointment')}
+					onClick={() => goToSection('appointment')}
 				>
 					Записаться
 				</button>
-
 			</div>
 		</header>
 	)
