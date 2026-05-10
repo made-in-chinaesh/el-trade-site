@@ -13,11 +13,7 @@
 				rgba(255, 255, 255, 0.03) 1px,
 				transparent 1px
 			),
-			linear-gradient(
-				90deg,
-				rgba(255, 255, 255, 0.03) 1px,
-				transparent 1px
-			);
+			linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 
 		background-size: 45px 45px;
 
@@ -42,8 +38,7 @@
 
 		border: 1px solid rgba(255, 255, 255, 0.06);
 
-		box-shadow:
-			0 0 60px rgba(255, 200, 73, 0.08),
+		box-shadow: 0 0 60px rgba(255, 200, 73, 0.08),
 			inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 
 		overflow: hidden;
@@ -138,8 +133,7 @@
 			&:focus {
 				border-color: rgba(255, 200, 73, 0.35);
 
-				box-shadow:
-					0 0 0 4px rgba(255, 200, 73, 0.08),
+				box-shadow: 0 0 0 4px rgba(255, 200, 73, 0.08),
 					0 0 30px rgba(255, 200, 73, 0.12);
 
 				background: rgba(255, 255, 255, 0.06);
@@ -221,20 +215,45 @@
 
 		transition: 0.4s;
 
-		box-shadow:
-			0 0 40px rgba(255, 200, 73, 0.25),
+		box-shadow: 0 0 40px rgba(255, 200, 73, 0.25),
 			0 0 80px rgba(255, 200, 73, 0.1);
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		gap: 10px;
 
 		&:hover {
 			transform: translateY(-4px);
 
-			box-shadow:
-				0 0 60px rgba(255, 200, 73, 0.35),
+			box-shadow: 0 0 60px rgba(255, 200, 73, 0.35),
 				0 0 120px rgba(255, 200, 73, 0.18);
 		}
 
 		&:active {
 			transform: scale(0.98);
+		}
+
+		&:disabled {
+			cursor: not-allowed;
+			opacity: 0.75;
+			transform: none !important;
+			box-shadow: 0 0 25px rgba(255, 200, 73, 0.15);
+		}
+
+		.loaderIcon {
+			font-size: 22px;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
 		}
 	}
 }

@@ -1,23 +1,31 @@
 import clsx from 'clsx'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styles from './styles.module.scss'
 
+import { LuLoaderCircle } from 'react-icons/lu'
+
 export const AppointmentBlock = () => {
+	const [loading, setLoading] = useState(false)
+
 	const { register, handleSubmit, reset } = useForm({
 		defaultValues: {
-			format: 'offline', // 👈 оффлайн по умолчанию
+			format: 'false', // оффлайн по умолчанию
 		},
 	})
 
-	const onSubmit = async (data) => {
+	const onSubmit = async data => {
+		if (loading) return
+
+		setLoading(true)
+
 		const formattedData = {
 			...data,
 			format: data.format === 'true',
 		}
-	
+
 		console.log('FORM DATA:', formattedData)
-		// reset()
-	
+
 		try {
 			const res = await fetch('https://el-trade-server.onrender.com/submit', {
 				method: 'POST',
@@ -26,17 +34,19 @@ export const AppointmentBlock = () => {
 				},
 				body: JSON.stringify(formattedData),
 			})
-	
+
 			const result = await res.json()
 			console.log('SERVER RESPONSE:', result)
-	
+
 			if (!res.ok) {
 				throw new Error(result.error || 'Server error')
 			}
-	
+
 			reset()
 		} catch (err) {
 			console.error('REQUEST ERROR:', err)
+		} finally {
+			setLoading(false)
 		}
 	}
 
@@ -77,7 +87,7 @@ export const AppointmentBlock = () => {
 						placeholder='Номер телефона'
 						{...register('phoneNumber', {
 							required: true,
-							pattern: /^[0-9+() -]+$/, // базовая защита
+							pattern: /^[0-9+() -]+$/,
 						})}
 					/>
 
@@ -98,7 +108,13 @@ export const AppointmentBlock = () => {
 						</label>
 					</div>
 
-					<button type='submit'>Записаться</button>
+					<button type='submit' disabled={loading}>
+						{loading ? (
+							<LuLoaderCircle className={styles.loaderIcon} />
+						) : (
+							'Записаться'
+						)}
+					</button>
 				</form>
 			</div>
 		</div>
