@@ -65,22 +65,24 @@ export const TeamProfile = () => {
 	if (!member) return <div>Not found</div>
 
 	return (
-		<div className={clsx(styles.page, 'container')}>
-			{/* BACK BUTTON */}
-			<button className={styles.backBtn} onClick={() => navigate('/')}>
-				← Назад
-			</button>
+		<div className={styles.profile}>
+			<div className={clsx(styles.page, 'container')}>
+				{/* BACK BUTTON */}
+				<button className={styles.backBtn} onClick={() => navigate('/')}>
+					← Назад
+				</button>
 
-			<div className={styles.header}>
-				<img src={member.image} alt='' />
-				<div>
-					<h1>{member.name}</h1>
-					<span>{member.role}</span>
+				<div className={styles.header}>
+					<img src={member.image} alt='' />
+					<div>
+						<h1>{member.name}</h1>
+						<span>{member.role}</span>
+					</div>
 				</div>
-			</div>
 
-			<div className={styles.content}>
-				<p>{member.description}</p>
+				<div className={styles.content}>
+					<p>{member.description}</p>
+				</div>
 			</div>
 		</div>
 	)

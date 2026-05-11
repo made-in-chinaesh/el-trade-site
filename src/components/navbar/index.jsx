@@ -1,11 +1,14 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 export const Navbar = () => {
 	const navigate = useNavigate()
+	const [menuOpen, setMenuOpen] = useState(false)
 
 	const goToSection = id => {
 		navigate('/', { state: { scrollTo: id } })
+		setMenuOpen(false)
 	}
 
 	return (
@@ -19,12 +22,22 @@ export const Navbar = () => {
 					EL Trade
 				</h1>
 
-				<nav className={styles.nav}>
+				<nav className={`${styles.nav} ${menuOpen ? styles.active : ''}`}>
 					<ul>
 						<li onClick={() => goToSection('courses')}>Курсы</li>
+
 						<li onClick={() => goToSection('team')}>Команда</li>
+
 						<li onClick={() => goToSection('contacts')}>Контакты</li>
+
 						<li onClick={() => goToSection('about')}>О нас</li>
+
+						<button
+							className={styles.mobileCta}
+							onClick={() => goToSection('appointment')}
+						>
+							Записаться
+						</button>
 					</ul>
 				</nav>
 
@@ -33,6 +46,15 @@ export const Navbar = () => {
 					onClick={() => goToSection('appointment')}
 				>
 					Записаться
+				</button>
+
+				<button
+					className={`${styles.burger} ${menuOpen ? styles.burgerActive : ''}`}
+					onClick={() => setMenuOpen(prev => !prev)}
+				>
+					<span />
+					<span />
+					<span />
 				</button>
 			</div>
 		</header>
