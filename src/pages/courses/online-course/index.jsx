@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { useNavigate } from 'react-router-dom'
+import { ScrollToTop } from '../../../shared/components'
 import styles from './styles.module.scss'
 
 export const OnlineCoursePage = () => {
@@ -7,6 +8,7 @@ export const OnlineCoursePage = () => {
 
 	return (
 		<div className={styles.online}>
+			<ScrollToTop />
 			<div className={clsx(styles.page, 'container')}>
 				{/* HERO */}
 				<section className={styles.hero}>

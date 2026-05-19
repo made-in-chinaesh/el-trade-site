@@ -1,13 +1,13 @@
 import clsx from 'clsx'
 import { useNavigate, useParams } from 'react-router-dom'
+import { ScrollToTop } from '../../shared/components'
 import styles from './styles.module.scss'
 
 const teamData = {
 	bilol: {
 		name: 'Азимов Билол',
 		role: 'Основатель',
-		image:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxys3YcMIKBtHrEwQ3JdVz-YiNNSDlXhYRVw&s',
+		image: '/team/bilol.png',
 		description: `
 Билол — один из основателей академии EL Trade.
 Он начал свой путь в трейдинге более 6 лет назад, начиная с криптовалютного рынка.
@@ -24,8 +24,7 @@ const teamData = {
 	biimyrza: {
 		name: 'Тагаев Биймырза',
 		role: 'Основатель',
-		image:
-			'https://i1.sndcdn.com/avatars-wtBAX6qgXtY0yPad-R1QPuA-t1080x1080.jpg',
+		image: '/team/biimyrza.png',
 		description: `
 Биймырза — практикующий трейдер и сооснователь академии.
 
@@ -41,8 +40,7 @@ const teamData = {
 	oyatillo: {
 		name: 'Умурзаков Оятилло',
 		role: 'Основатель',
-		image:
-			'https://pyxis.nymag.com/v1/imgs/059/056/4fe6fb3a2aa9222855627e5ef384156369-6-22-Epstein.1x.rsquare.w1400.jpg',
+		image: '/team/oyatillo.png',
 		description: `
 Оятилло — аналитик и стратег академии.
 
@@ -66,6 +64,7 @@ export const TeamProfile = () => {
 
 	return (
 		<div className={styles.profile}>
+			<ScrollToTop />
 			<div className={clsx(styles.page, 'container')}>
 				{/* BACK BUTTON */}
 				<button className={styles.backBtn} onClick={() => navigate('/')}>

@@ -1,3 +1,4 @@
+import { ScrollToTop } from '../../../shared/components'
 import styles from './styles.module.scss'
 import { useNavigate } from 'react-router-dom'
 
@@ -6,6 +7,7 @@ export const OfflineCoursePage = () => {
 
 	return (
 		<div className={styles.page}>
+			<ScrollToTop />
 			{/* HERO */}
 			<section className={styles.hero}>
 				<div className='container'>

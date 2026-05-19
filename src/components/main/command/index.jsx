@@ -22,7 +22,7 @@ export const CommandBlock = () => {
 				<div className={styles.cards}>
 					<div className={styles.card} onClick={() => goToProfile('bilol')}>
 						<img
-							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxys3YcMIKBtHrEwQ3JdVz-YiNNSDlXhYRVw&s'
+							src='/team/bilol.png'
 							alt='Azimov Bilol'
 						/>
 
@@ -42,7 +42,7 @@ export const CommandBlock = () => {
 
 					<div className={styles.card} onClick={() => goToProfile('biimyrza')}>
 						<img
-							src='https://i1.sndcdn.com/avatars-wtBAX6qgXtY0yPad-R1QPuA-t1080x1080.jpg'
+							src='/team/biimyrza.png'
 							alt='Tagaev Biimyrza'
 						/>
 
@@ -62,7 +62,7 @@ export const CommandBlock = () => {
 
 					<div className={styles.card} onClick={() => goToProfile('oyatillo')}>
 						<img
-							src='https://pyxis.nymag.com/v1/imgs/059/056/4fe6fb3a2aa9222855627e5ef384156369-6-22-Epstein.1x.rsquare.w1400.jpg'
+							src='/team/oyatillo.png'
 							alt='Umurzakov Oyatillo'
 						/>
 

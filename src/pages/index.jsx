@@ -4,7 +4,9 @@ import { Navbar } from '../components/navbar'
 
 import { OfflineCoursePage } from './courses/offline-course'
 import { OnlineCoursePage } from './courses/online-course'
+
 import MainPage from './main'
+
 import { TeamProfile } from './team'
 
 const Routing = () => {
