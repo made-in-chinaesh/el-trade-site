@@ -21,10 +21,7 @@ export const CommandBlock = () => {
 
 				<div className={styles.cards}>
 					<div className={styles.card} onClick={() => goToProfile('bilol')}>
-						<img
-							src='/team/bilol.png'
-							alt='Azimov Bilol'
-						/>
+						<img src='/team/bilol.PNG' alt='Azimov Bilol' />
 
 						<div className={styles.cardContent}>
 							<h3>Азимов Билол</h3>
@@ -41,10 +38,7 @@ export const CommandBlock = () => {
 					</div>
 
 					<div className={styles.card} onClick={() => goToProfile('biimyrza')}>
-						<img
-							src='/team/biimyrza.png'
-							alt='Tagaev Biimyrza'
-						/>
+						<img src='/team/biimyrza.PNG' alt='Tagaev Biimyrza' />
 
 						<div className={styles.cardContent}>
 							<h3>Тагаев Биймырза</h3>
@@ -61,10 +55,7 @@ export const CommandBlock = () => {
 					</div>
 
 					<div className={styles.card} onClick={() => goToProfile('oyatillo')}>
-						<img
-							src='/team/oyatillo.png'
-							alt='Umurzakov Oyatillo'
-						/>
+						<img src='/team/oyatillo.PNG' alt='Umurzakov Oyatillo' />
 
 						<div className={styles.cardContent}>
 							<h3>Умурзаков Оятилло</h3>

@@ -7,7 +7,7 @@ const teamData = {
 	bilol: {
 		name: 'Азимов Билол',
 		role: 'Основатель',
-		image: '/team/bilol.png',
+		image: '/team/bilol.PNG',
 		description: `
 Билол — один из основателей академии EL Trade.
 Он начал свой путь в трейдинге более 6 лет назад, начиная с криптовалютного рынка.
@@ -24,7 +24,7 @@ const teamData = {
 	biimyrza: {
 		name: 'Тагаев Биймырза',
 		role: 'Основатель',
-		image: '/team/biimyrza.png',
+		image: '/team/biimyrza.PNG',
 		description: `
 Биймырза — практикующий трейдер и сооснователь академии.
 
@@ -40,7 +40,7 @@ const teamData = {
 	oyatillo: {
 		name: 'Умурзаков Оятилло',
 		role: 'Основатель',
-		image: '/team/oyatillo.png',
+		image: '/team/oyatillo.PNG',
 		description: `
 Оятилло — аналитик и стратег академии.
 
