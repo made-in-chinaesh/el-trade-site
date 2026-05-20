@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://eltradeacademy.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://eltradeacademy.com/offline-course</loc>
+  </url>
+
+  <url>
+    <loc>https://eltradeacademy.com/online-course</loc>
+  </url>
+
+  <!-- динамический маршрут (пример страницы профиля) -->
+  <url>
+    <loc>https://eltradeacademy.com/team/bilol</loc>
+  </url>
+
+  <url>
+    <loc>https://eltradeacademy.com/team/biimyrza</loc>
+  </url>
+
+	  <url>
+    <loc>https://eltradeacademy.com/team/oyatillo</loc>
+  </url>
+
+</urlset>
