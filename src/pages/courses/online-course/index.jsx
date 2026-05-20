@@ -1,18 +1,101 @@
 import clsx from 'clsx'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ScrollToTop } from '../../../shared/components'
 import styles from './styles.module.scss'
 
+const tariffs = {
+	standard: {
+		title: 'Standard',
+		price: '$499',
+		// oldPrice: '$699',
+		description:
+			'Идеально для новичков, которые хотят освоить основы трейдинга.',
+		features: [
+			'📚 Базовые уроки',
+			'📊 Основы технического анализа',
+			'💬 Общий чат студентов',
+			'🎥 Доступ к материалам 3 месяца',
+		],
+	},
+
+	premium: {
+		title: 'Premium',
+		price: '$750',
+		oldPrice: '$999',
+		description: 'Для тех, кто хочет выйти на профессиональный уровень.',
+		features: [
+			'🔥 Все из Standard',
+			'📈 Продвинутые стратегии',
+			'🧠 Разборы рынка в реальном времени',
+			'👨‍🏫 Поддержка наставника',
+			'🎥 Доступ к материалам навсегда',
+		],
+	},
+
+	individual: {
+		title: 'Индивидуальный',
+		price: '$1300',
+		oldPrice: '$1600',
+		description: 'Полностью персональное обучение с наставником 1 на 1.',
+		features: [
+			'👤 Индивидуальные созвоны',
+			'📊 Персональный план обучения',
+			'💼 Разбор твоих сделок',
+			'⚡ Быстрый рост навыков',
+			'🏆 Максимальная поддержка',
+		],
+	},
+}
+
 export const OnlineCoursePage = () => {
 	const navigate = useNavigate()
+	const [activeTab, setActiveTab] = useState('standard')
+
+	const [displayPrice, setDisplayPrice] = useState(0)
+
+	const current = tariffs[activeTab]
+
+	// COUNT-UP ANIMATION
+	useEffect(() => {
+		const target = Number(current.price?.replace('$', ''))
+		let start = 0
+
+		const duration = 600
+		const stepTime = 20
+		const steps = duration / stepTime
+		const increment = target / steps
+
+		const interval = setInterval(() => {
+			start += increment
+
+			if (start >= target) {
+				start = target
+				clearInterval(interval)
+			}
+
+			setDisplayPrice(Math.floor(start))
+		}, stepTime)
+
+		return () => clearInterval(interval)
+	}, [activeTab, current.price])
+
+	const goToAppointment = () => {
+		navigate('/')
+
+		setTimeout(() => {
+			const el = document.getElementById('appointment')
+			if (el) el.scrollIntoView({ behavior: 'smooth' })
+		}, 100)
+	}
 
 	return (
 		<div className={styles.online}>
 			<ScrollToTop />
+
 			<div className={clsx(styles.page, 'container')}>
 				{/* HERO */}
 				<section className={styles.hero}>
-					{/* BACK BUTTON */}
 					<button className={styles.backBtn} onClick={() => navigate('/')}>
 						← На главную
 					</button>
@@ -33,43 +116,64 @@ export const OnlineCoursePage = () => {
 					/>
 				</section>
 
-				{/* FEATURES */}
-				<section className={styles.info}>
-					<h2>Почему онлайн формат работает</h2>
+				{/* TARIFFS */}
+				<section className={styles.tariffs}>
+					<div className={styles.top}>
+						<h2>Выбери формат обучения</h2>
+						<p>Каждый тариф создан под разный уровень подготовки и цели.</p>
+					</div>
 
-					<ul>
-						<li>🌍 Обучение из любой страны</li>
-						<li>⏱ Гибкий график без привязки ко времени</li>
-						<li>📊 Доступ к видеоурокам 24/7</li>
-						<li>💬 Чат с наставниками и учениками</li>
-						<li>📈 Разбор реальных рыночных ситуаций</li>
-					</ul>
-				</section>
+					{/* TABS */}
+					<div className={styles.tabs}>
+						<div className={styles.slider} data-active={activeTab} />
 
-				{/* MODULES */}
-				<section className={styles.modules}>
-					<h2>Программа курса</h2>
+						<button
+							className={activeTab === 'standard' ? styles.active : ''}
+							onClick={() => setActiveTab('standard')}
+						>
+							Standard
+						</button>
 
-					<div className={styles.grid}>
-						<div className={styles.card}>
-							<h3>Модуль 1</h3>
-							<p>Основы рынка и терминология трейдинга</p>
+						<button
+							className={activeTab === 'premium' ? styles.active : ''}
+							onClick={() => setActiveTab('premium')}
+						>
+							Premium
+						</button>
+
+						<button
+							className={activeTab === 'individual' ? styles.active : ''}
+							onClick={() => setActiveTab('individual')}
+						>
+							Индивидуальный
+						</button>
+					</div>
+
+					{/* CARD */}
+					<div key={activeTab} className={styles.card}>
+						<div className={styles.priceBlock}>
+							<h3>{current.title}</h3>
+
+							<div className={styles.priceWrap}>
+								<span className={styles.oldPrice}>
+									{current.oldPrice || ''}
+								</span>
+
+								<span className={styles.price}>${displayPrice}</span>
+							</div>
+
+							<p>{current.description}</p>
 						</div>
 
-						<div className={styles.card}>
-							<h3>Модуль 2</h3>
-							<p>Графики, свечи и технический анализ</p>
-						</div>
+						<ul>
+							{current.features.map(item => (
+								<li key={item}>{item}</li>
+							))}
+						</ul>
 
-						<div className={styles.card}>
-							<h3>Модуль 3</h3>
-							<p>Стратегии входа и выхода из сделок</p>
-						</div>
-
-						<div className={styles.card}>
-							<h3>Модуль 4</h3>
-							<p>Практика и работа с реальным рынком</p>
-						</div>
+						<button className={styles.buyBtn} onClick={goToAppointment}>
+							Записаться
+						</button>
 					</div>
 				</section>
 
@@ -78,7 +182,7 @@ export const OnlineCoursePage = () => {
 					<h2>Начни обучение онлайн</h2>
 					<p>Доступ к курсу откроется сразу после записи</p>
 
-					<button onClick={() => navigate('/#appointment')}>Записаться</button>
+					<button onClick={goToAppointment}>Записаться</button>
 				</section>
 			</div>
 		</div>

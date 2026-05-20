@@ -10,6 +10,7 @@ import {
 	UniqueBlock,
 	Wave,
 } from '../../components/main'
+import { FaqBlock } from '../../components/main/faq'
 
 const MainPage = () => {
 	const location = useLocation()
@@ -45,6 +46,7 @@ const MainPage = () => {
 			<GlobalBlock />
 			<ReviewsBlock />
 			<AppointmentBlock />
+			<FaqBlock />
 		</div>
 	)
 }
