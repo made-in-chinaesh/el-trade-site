@@ -53,6 +53,12 @@
 
 			border: 2px solid rgba(255, 200, 73, 0.6);
 			box-shadow: 0 0 30px rgba(255, 200, 73, 0.15);
+			flex-shrink: 0; /* 🔥 НЕ ДАЁМ СЖАТЬСЯ */
+
+			@media (max-width: 460px) {
+				width: 100px;
+				height: 100px;
+			}
 		}
 	}
 
@@ -63,6 +69,10 @@
 		background: linear-gradient(90deg, #fff 0%, #ffc849 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+
+		@media (max-width: 460px) {
+			font-size: 34px;
+		}
 	}
 
 	span {

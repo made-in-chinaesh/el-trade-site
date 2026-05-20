@@ -19,7 +19,7 @@ export const Navbar = () => {
 					onClick={() => navigate('/')}
 					style={{ cursor: 'pointer' }}
 				>
-					EL Trade
+					EL TRADE
 				</h1>
 
 				<nav className={`${styles.nav} ${menuOpen ? styles.active : ''}`}>

@@ -125,8 +125,6 @@ export const OnlineCoursePage = () => {
 
 					{/* TABS */}
 					<div className={styles.tabs}>
-						<div className={styles.slider} data-active={activeTab} />
-
 						<button
 							className={activeTab === 'standard' ? styles.active : ''}
 							onClick={() => setActiveTab('standard')}
@@ -145,7 +143,7 @@ export const OnlineCoursePage = () => {
 							className={activeTab === 'individual' ? styles.active : ''}
 							onClick={() => setActiveTab('individual')}
 						>
-							Индивидуальный
+							Individual
 						</button>
 					</div>
 

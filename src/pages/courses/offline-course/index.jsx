@@ -124,8 +124,6 @@ export const OfflineCoursePage = () => {
 
 					{/* TABS */}
 					<div className={styles.tabs}>
-						<div className={styles.slider} data-active={activeTab} />
-
 						<button
 							className={clsx(activeTab === 'standard' && styles.active)}
 							onClick={() => setActiveTab('standard')}
@@ -144,7 +142,7 @@ export const OfflineCoursePage = () => {
 							className={clsx(activeTab === 'individual' && styles.active)}
 							onClick={() => setActiveTab('individual')}
 						>
-							Индивидуальный
+							Individual
 						</button>
 					</div>
 
