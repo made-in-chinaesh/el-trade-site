@@ -28,24 +28,7 @@ export const CommandBlock = () => {
 							<div className={styles.role}>Основатель</div>
 							<a
 								target='_blank'
-								href='https://instagram.com'
-								rel='noreferrer'
-								onClick={e => e.stopPropagation()}
-							>
-								<FaInstagram /> Instagram
-							</a>
-						</div>
-					</div>
-
-					<div className={styles.card} onClick={() => goToProfile('biimyrza')}>
-						<img src='/team/biimyrza.PNG' alt='Tagaev Biimyrza' />
-
-						<div className={styles.cardContent}>
-							<h3>Тагаев Биймырза</h3>
-							<div className={styles.role}>Основатель</div>
-							<a
-								target='_blank'
-								href='https://instagram.com'
+								href='https://www.instagram.com/az1mov._/#'
 								rel='noreferrer'
 								onClick={e => e.stopPropagation()}
 							>
@@ -62,7 +45,7 @@ export const CommandBlock = () => {
 							<div className={styles.role}>Основатель</div>
 							<a
 								target='_blank'
-								href='https://instagram.com'
+								href='https://www.instagram.com/oyatiumurzakov/#'
 								rel='noreferrer'
 								onClick={e => e.stopPropagation()}
 							>
